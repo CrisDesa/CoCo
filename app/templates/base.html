@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css')}}">
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+        {% if titulo %}
+        <title>{{ titulo }} - CoCo</title> 
+        {% else %}
+        <title>CoCo</title>
+        {% endif %} 
+  </head>
+  <body>
+   <div>CoCo - Conocimiento Compartido 
+       <a href="/index">Home</a>
+       <a href="/login">Login</a>
+   </div>
+     <hr>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           <ul>
+           {% for message in messages %}
+               <li>{{ message  }}</li>
+           {% endfor %}
+           </ul>
+        {% endif  %}
+    {% endwith %}
+    {% block contenido %}
+    {% endblock %}
+
+        <footer>
+            <div class="conteiner">
+                <div class="row">
+                    <p class="copyright text-muted"> pyDBA </p>
+                </div>
+            </div>
+        </footer>
+  </body>
+</html>

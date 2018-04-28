@@ -1,0 +1,6 @@
+# archivo de configuracion
+
+# configuracion para modulo Flask-WTF
+WTF_CSRF_ENABLED = True  # habilita la revencion CSRF
+SECRET_KEY = 'clave-secreta-dificil-de-adivinar' # poner una clave secreta dificil de adivinar
+
